@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heaven's By Elena — Bijoux faits main</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ========== VARIABLES CSS ========== */
+    :root {
+      --blanc: #FFFFFF;
+      --rose-poudre: #E8C4B8;
+      --rose-clair: #F5E6E0;
+      --noir: #1A1A1A;
+      --gris: #8A8A8A;
+      --bordure-produit: #F0E0D8;
+      --fond-casse: #FAFAFA;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: var(--noir);
+      background: var(--blanc);
+      line-height: 1.6;
+    }
+
+    /* ========== BARRE ANNONCE ========== */
+    .announcement-bar {
+      background: var(--noir);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--blanc);
+    }
+
+    /* ========== HEADER ========== */
+    .header {
+      background: var(--blanc);
+      padding: 30px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .logo {
+      flex: 1;
+      text-align: center;
+      min-width: 200px;
+    }
+
+    .logo-heavens {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: var(--noir);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .logo-by {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      font-variant: small-caps;
+      letter-spacing: 0.4em;
+      color: var(--noir);
+      margin-top: -4px;
+    }
+
+    .nav-main {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-main ul {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .nav-main a {
+      text-decoration: none;
+      color: var(--noir);
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-main a:hover {
+      border-bottom-color: var(--rose-poudre);
+      color: var(--rose-poudre);
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 24px;
+    }
+
+    .header-icons a {
+      color: var(--noir);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .header-icons a:hover { color: var(--rose-poudre); }
+
+    /* ========== HERO (texte gauche, image droite) ========== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 85vh;
+      background: var(--blanc);
+      align-items: center;
+    }
+
+    .hero-text {
+      padding: 80px 60px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .hero-text .subtitle {
+      font-size: 1rem;
+      color: var(--gris);
+      max-width: 400px;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      background: url('https://placehold.co/800x1000/F5E6E0/8A8A8A?text=Heaven%27s+by+Elena') center/cover no-repeat;
+    }
+
+    /* ========== TITRE DE SECTION (centré + ligne décorative) ========== */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--noir);
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: var(--rose-poudre);
+      margin: 0 auto;
+    }
+
+    /* ========== CATÉGORIES (images verticales portrait) ========== */
+    .categories {
+      padding: 100px 40px;
+      background: var(--blanc);
+    }
+
+    .categories .section-title { margin-bottom: 60px; }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .category-item {
+      text-align: center;
+      text-decoration: none;
+      color: var(--noir);
+    }
+
+    .category-image {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      background: var(--rose-clair);
+    }
+
+    .category-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .category-item span {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gris);
+    }
+
+    /* ========== MEILLEURES VENTES ========== */
+    .best-sellers {
+      padding: 100px 40px;
+      background: var(--blanc);
+    }
+
+    .best-sellers .section-title { margin-bottom: 60px; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: var(--blanc);
+      border: 1px solid var(--bordure-produit);
+      position: relative;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 20px rgba(232, 196, 184, 0.2);
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: var(--rose-clair);
+    }
+
+    .product-image img { width: 100%; height: 100%; object-fit: cover; }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--blanc);
+      color: var(--noir);
+      padding: 6px 14px;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid var(--rose-poudre);
+    }
+
+    .product-info {
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .product-price {
+      font-size: 0.9rem;
+      color: var(--noir);
+    }
+
+    /* ========== SECTION NOTRE HISTOIRE (photo gauche, texte droite) ========== */
+    .storytelling {
+      padding: 100px 40px;
+      background: var(--fond-casse);
+    }
+
+    .storytelling-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .storytelling-image {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: url('https://placehold.co/500x600/F5E6E0/8A8A8A?text=Elena') center/cover no-repeat;
+    }
+
+    .storytelling-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      margin-bottom: 30px;
+      color: var(--noir);
+    }
+
+    .storytelling-text p {
+      font-size: 0.95rem;
+      color: var(--gris);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    /* ========== ENGAGEMENTS ========== */
+    .engagements {
+      padding: 100px 40px;
+      background: var(--blanc);
+    }
+
+    .engagements .section-title { margin-bottom: 60px; }
+
+    .engagements-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .engagement-item {
+      text-align: center;
+    }
+
+    .engagement-icon {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 20px;
+      color: var(--rose-poudre);
+    }
+
+    .engagement-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+    }
+
+    .engagement-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .engagement-item p {
+      font-size: 0.8rem;
+      color: var(--gris);
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--noir);
+      color: var(--blanc);
+      padding: 60px 40px 30px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 50px;
+    }
+
+    .footer .logo-heavens { color: var(--blanc); }
+    .footer .logo-by { color: var(--blanc); opacity: 0.9; }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: var(--gris);
+      max-width: 300px;
+      margin-top: 20px;
+    }
+
+    .footer-links h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: var(--blanc);
+    }
+
+    .footer-links ul { list-style: none; }
+    .footer-links a {
+      color: var(--gris);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover { color: var(--rose-poudre); }
+
+    .newsletter input {
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: transparent;
+      color: var(--blanc);
+      width: 100%;
+      max-width: 250px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+    .newsletter input::placeholder { color: var(--gris); }
+
+    .newsletter button {
+      padding: 12px 24px;
+      background: var(--blanc);
+      border: none;
+      color: var(--noir);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .newsletter button:hover {
+      background: var(--rose-poudre);
+      color: var(--blanc);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 30px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--gris);
+    }
+
+    .footer-instagram {
+      margin-top: 20px;
+    }
+    .footer-instagram a {
+      color: var(--rose-poudre);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    /* ========== BOUTON CTA ========== */
+    .btn-cta {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--noir);
+      color: var(--blanc) !important;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 30px;
+      transition: background 0.3s ease;
+    }
+    .btn-cta:hover { background: var(--rose-poudre); }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 968px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-text { order: 1; padding: 60px 30px; }
+      .hero-image { order: 2; min-height: 400px; }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+      .storytelling-inner { grid-template-columns: 1fr; }
+      .storytelling-image { order: 1; }
+      .engagements-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .header { flex-direction: column; }
+      .nav-main ul { justify-content: center; }
+      .footer-content { grid-template-columns: 1fr; text-align: center; }
+      .footer-brand p { max-width: none; }
+    }
+
+    @media (max-width: 480px) {
+      .categories-grid, .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barre annonce -->
+  <div class="announcement-bar">
+    ✦ Livraison offerte dès 60€ · Bijoux faits main · Gold filled & Argent sterling ✦
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-icons">
+      <a href="#" aria-label="Recherche">🔍</a>
+      <a href="#" aria-label="Compte">👤</a>
+    </div>
+    <a href="#" class="logo">
+      <span class="logo-heavens">Heaven's</span>
+      <span class="logo-by">By Elena</span>
+    </a>
+    <nav class="nav-main">
+      <ul>
+        <li><a href="#">Colliers</a></li>
+        <li><a href="#">Boucles</a></li>
+        <li><a href="#">Bagues</a></li>
+        <li><a href="#">Bracelets</a></li>
+        <li><a href="#">Sur-mesure</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <a href="#" aria-label="Panier">🛒</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Bijoux faits main, portés avec âme</h1>
+      <p class="subtitle">Chaque pièce est unique, créée avec soin par Elena</p>
+      <a href="#" class="btn-cta">Découvrir</a>
+    </div>
+    <div class="hero-image"></div>
+  </section>
+
+  <!-- Catégories -->
+  <section class="categories">
+    <h2 class="section-title">Explorer</h2>
+    <div class="categories-grid">
+      <a href="#" class="category-item">
+        <div class="category-image">
+          <img src="https://placehold.co/300x400/F5E6E0/8A8A8A?text=Colliers" alt="Colliers">
+        </div>
+        <span>Colliers</span>
+      </a>
+      <a href="#" class="category-item">
+        <div class="category-image">
+          <img src="https://placehold.co/300x400/F5E6E0/8A8A8A?text=Boucles" alt="Boucles">
+        </div>
+        <span>Boucles</span>
+      </a>
+      <a href="#" class="category-item">
+        <div class="category-image">
+          <img src="https://placehold.co/300x400/F5E6E0/8A8A8A?text=Bagues" alt="Bagues">
+        </div>
+        <span>Bagues</span>
+      </a>
+      <a href="#" class="category-item">
+        <div class="category-image">
+          <img src="https://placehold.co/300x400/F5E6E0/8A8A8A?text=Bracelets" alt="Bracelets">
+        </div>
+        <span>Bracelets</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Meilleures ventes -->
+  <section class="best-sellers">
+    <h2 class="section-title">Meilleures ventes</h2>
+    <div class="products-grid">
+      <article class="product-card">
+        <span class="product-badge">Fait main</span>
+        <div class="product-image">
+          <img src="https://placehold.co/400x400/F5E6E0/8A8A8A?text=Collier" alt="Collier">
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Collier Lumière</h3>
+          <p class="product-price">65,00 €</p>
+        </div>
+      </article>
+      <article class="product-card">
+        <span class="product-badge">Pièce unique</span>
+        <div class="product-image">
+          <img src="https://placehold.co/400x400/F5E6E0/8A8A8A?text=Boucles" alt="Boucles">
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Boucles Perle</h3>
+          <p class="product-price">45,00 €</p>
+        </div>
+      </article>
+      <article class="product-card">
+        <span class="product-badge">Fait main</span>
+        <div class="product-image">
+          <img src="https://placehold.co/400x400/F5E6E0/8A8A8A?text=Bague" alt="Bague">
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Bague Éternité</h3>
+          <p class="product-price">75,00 €</p>
+        </div>
+      </article>
+      <article class="product-card">
+        <span class="product-badge">Fait main</span>
+        <div class="product-image">
+          <img src="https://placehold.co/400x400/F5E6E0/8A8A8A?text=Bracelet" alt="Bracelet">
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Bracelet Douceur</h3>
+          <p class="product-price">38,00 €</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Notre histoire -->
+  <section class="storytelling">
+    <div class="storytelling-inner">
+      <div class="storytelling-image"></div>
+      <div class="storytelling-text">
+        <h2>Notre histoire</h2>
+        <p>Elena crée ses bijoux à la main, avec passion et minutie. Chaque pièce est façonnée en gold filled et argent sterling, en série limitée, pour vous offrir des créations durables et élégantes.</p>
+        <p>Des matériaux nobles, un savoir-faire artisanal et une attention portée à chaque détail : voilà ce qui fait l'âme de Heaven's By Elena.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagements -->
+  <section class="engagements">
+    <h2 class="section-title">Nos engagements</h2>
+    <div class="engagements-grid">
+      <div class="engagement-item">
+        <div class="engagement-icon">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Fait main en France</h3>
+        <p>Créations artisanales</p>
+      </div>
+      <div class="engagement-item">
+        <div class="engagement-icon">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Gold filled & Argent sterling</h3>
+        <p>Métaux nobles</p>
+      </div>
+      <div class="engagement-item">
+        <div class="engagement-icon">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3>Livraison soignée</h3>
+        <p>Emballage soigné</p>
+      </div>
+      <div class="engagement-item">
+        <div class="engagement-icon">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        </div>
+        <h3>Retours 14 jours</h3>
+        <p>Satisfait ou remboursé</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-heavens">Heaven's</span>
+          <span class="logo-by">By Elena</span>
+        </div>
+        <p>Bijoux faits main avec âme. Gold filled & Argent sterling.</p>
+        <div class="newsletter">
+          <input type="email" placeholder="Votre email">
+          <button type="button">S'abonner</button>
+        </div>
+        <div class="footer-instagram">
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Boutique</h4>
+        <ul>
+          <li><a href="#">Colliers</a></li>
+          <li><a href="#">Boucles</a></li>
+          <li><a href="#">Bagues</a></li>
+          <li><a href="#">Bracelets</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="#">Livraison</a></li>
+          <li><a href="#">Retours</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Heaven's By Elena. Tous droits réservés.
+    </div>
+  </footer>
+</body>
+</html>
