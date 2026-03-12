@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heaven's By Elena — Bijoux faits main</title>
+  <meta name="description" content="Bijoux faits main, portés avec âme. Gold filled & Argent sterling. Créations artisanales par Elena.">
+
+  <!-- Schema.org SEO — rempli dynamiquement après chargement des avis -->
+  <script type="application/ld+json" id="schema-aggregate">{
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Heaven's By Elena",
+    "description": "Bijoux faits main, portés avec âme. Gold filled & Argent sterling.",
+    "url": "https://heavensbyelena.fr"
+  }</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========== VARIABLES CSS ========== */
+    :root {
+      --blanc: #FFFFFF;
+      --rose-poudre: #E8C4B8;
+      --rose-clair: #F5E6E0;
+      --noir: #1A1A1A;
+      --gris: #8A8A8A;
+      --bordure-produit: #F0E0D8;
+      --fond-casse: #FAFAFA;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: var(--noir);
+      background: var(--blanc);
+      line-height: 1.6;
+    }
+
+    /* ========== BARRE ANNONCE ========== */
+    .announcement-bar {
+      background: var(--noir);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--blanc);
+    }
+
+    /* ========== HEADER ========== */
+    .header {
+      background: var(--blanc);
+      padding: 30px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--bordure-produit);
+    }
+
+    .logo {
+      flex: 1;
+      text-align: center;
+      min-width: 200px;
+      text-decoration: none;
+    }
+
+    .logo-heavens {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: var(--noir);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .logo-by {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      font-variant: small-caps;
+      letter-spacing: 0.4em;
+      color: var(--noir);
+      margin-top: -4px;
+      display: block;
+    }
+
+    .nav-main {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-main ul {
+      list-style: none;
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .nav-main a {
+      text-decoration: none;
+      color: var(--noir);
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-main a:hover,
+    .nav-main a.active {
+      border-bottom-color: var(--rose-poudre);
+      color: var(--rose-poudre);
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .header-icons a {
+      color: var(--noir);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .header-icons a:hover { color: var(--rose-poudre); }
+
+    /* Bouton panier avec badge */
+    .cart-btn {
+      position: relative;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: var(--noir);
+      transition: color 0.3s ease;
+      padding: 0;
+    }
+
+    .cart-btn:hover { color: var(--rose-poudre); }
+
+    .cart-badge {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background: var(--rose-poudre);
+      color: var(--noir);
+      font-size: 0.6rem;
+      font-weight: 500;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0;
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .cart-badge.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 85vh;
+      background: var(--blanc);
+      align-items: center;
+    }
+
+    .hero-text {
+      padding: 80px 60px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .hero-text .subtitle {
+      font-size: 1rem;
+      color: var(--gris);
+      max-width: 400px;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      background: url('https://placehold.co/800x1000/F5E6E0/8A8A8A?text=Heaven%27s+by+Elena') center/cover no-repeat;
+    }
+
+    /* ========== TITRE DE SECTION ========== */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--noir);
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: var(--rose-poudre);
+      margin: 12px auto 0;
+    }
+
+    /* ========== CATÉGORIES ========== */
+    .categories {
+      padding: 100px 40px;
+      background: var(--blanc);
+    }
+
+    .categories .section-title { margin-bottom: 60px; }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+      justify-items: center;
+    }
+
+    /* Centrer les items de la dernière ligne incomplète */
+    .categories-grid > :nth-child(4n+1):nth-last-child(-n+3),
+    .categories-grid > :nth-child(4n+1):nth-last-child(-n+3) ~ .category-item {
+      grid-column: auto;
+    }
+
+    /* 7 catégories : ligne 2 de 3 items centrée */
+    .categories-grid.items-7 {
+      grid-template-columns: repeat(8, 1fr);
+    }
+    .categories-grid.items-7 > :nth-child(-n+4) {
+      grid-column: span 2;
+    }
+    .categories-grid.items-7 > :nth-child(n+5) {
+      grid-column: span 2;
+    }
+    .categories-grid.items-7 > :nth-child(5) { grid-column: 2 / span 2; }
+    .categories-grid.items-7 > :nth-child(6) { grid-column: 4 / span 2; }
+    .categories-grid.items-7 > :nth-child(7) { grid-column: 6 / span 2; }
+
+    .category-item {
+      text-align: center;
+      text-decoration: none;
+      color: var(--noir);
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .category-item:hover { opacity: 0.8; }
+
+    .category-image {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      background: var(--rose-clair);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .category-item.active .category-image {
+      box-shadow: 0 0 0 2px var(--rose-poudre), 0 0 0 5px rgba(232, 196, 184, 0.2);
+    }
+
+    .category-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .category-item span {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gris);
+    }
+
+    /* Bouton "Tous les produits" */
+    .filter-reset {
+      display: block;
+      margin: 40px auto 0;
+      padding: 12px 32px;
+      background: transparent;
+      border: 1px solid var(--bordure-produit);
+      color: var(--noir);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .filter-reset:hover {
+      background: var(--rose-clair);
+      border-color: var(--rose-poudre);
+    }
+
+    /* ========== MEILLEURES VENTES ========== */
+    .best-sellers {
+      padding: 100px 40px;
+      background: var(--blanc);
+    }
+
+    .best-sellers .section-title { margin-bottom: 60px; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: var(--blanc);
+      border: 1px solid var(--bordure-produit);
+      position: relative;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 20px rgba(232, 196, 184, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: var(--rose-clair);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.04);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--blanc);
+      color: var(--noir);
+      padding: 6px 14px;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid var(--rose-poudre);
+    }
+
+    .product-info {
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .product-price {
+      font-size: 0.9rem;
+      color: var(--noir);
+      margin-bottom: 16px;
+    }
+
+    /* Bouton ajouter au panier */
+    .btn-add-cart {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--noir);
+      color: var(--blanc);
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-add-cart:hover {
+      background: var(--rose-poudre);
+    }
+
+    /* Message vide produits */
+    .products-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--gris);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+    }
+
+    /* Skeleton loader */
+    .skeleton {
+      background: linear-gradient(90deg, var(--rose-clair) 25%, #edddd6 50%, var(--rose-clair) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 2px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .product-card.loading .product-image { aspect-ratio: 1; }
+    .product-card.loading .product-image,
+    .product-card.loading .product-name,
+    .product-card.loading .product-price { background: linear-gradient(90deg, var(--rose-clair) 25%, #edddd6 50%, var(--rose-clair) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
+    .product-card.loading .product-name { height: 20px; margin: 0 auto 8px; width: 70%; }
+    .product-card.loading .product-price { height: 16px; margin: 0 auto; width: 40%; }
+
+    /* ========== STORYTELLING ========== */
+    .storytelling {
+      padding: 100px 40px;
+      background: var(--fond-casse);
+    }
+
+    .storytelling-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .storytelling-image {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: url('https://placehold.co/500x600/F5E6E0/8A8A8A?text=Elena') center/cover no-repeat;
+    }
+
+    .storytelling-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      margin-bottom: 30px;
+      color: var(--noir);
+    }
+
+    .storytelling-text p {
+      font-size: 0.95rem;
+      color: var(--gris);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    /* ========== ENGAGEMENTS ========== */
+    .engagements {
+      padding: 100px 40px;
+      background: var(--blanc);
+    }
+
+    .engagements .section-title { margin-bottom: 60px; }
+
+    .engagements-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .engagement-item { text-align: center; }
+
+    .engagement-icon {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 20px;
+      color: var(--rose-poudre);
+    }
+
+    .engagement-icon svg { width: 100%; height: 100%; fill: none; }
+
+    .engagement-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .engagement-item p { font-size: 0.8rem; color: var(--gris); }
+
+    /* ========== AVIS CLIENTS ========== */
+    .reviews-section {
+      padding: 100px 40px;
+      background: var(--fond-casse);
+    }
+
+    .reviews-section .section-title { margin-bottom: 20px; }
+
+    .reviews-summary {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .reviews-avg {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--noir);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stars-display {
+      font-size: 1.4rem;
+      color: var(--rose-poudre);
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+    }
+
+    .reviews-count {
+      font-size: 0.8rem;
+      color: var(--gris);
+      letter-spacing: 0.1em;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto 50px;
+    }
+
+    .review-card {
+      background: var(--blanc);
+      border: 1px solid var(--bordure-produit);
+      padding: 28px 24px;
+    }
+
+    .review-stars {
+      font-size: 0.9rem;
+      color: var(--rose-poudre);
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .review-comment {
+      font-size: 0.9rem;
+      color: var(--noir);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .review-author {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gris);
+    }
+
+    .review-date {
+      font-size: 0.72rem;
+      color: var(--gris);
+      margin-top: 4px;
+    }
+
+    .reviews-actions {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .btn-see-all {
+      display: inline-block;
+      padding: 12px 32px;
+      background: transparent;
+      border: 1px solid var(--noir);
+      color: var(--noir);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-see-all:hover {
+      background: var(--noir);
+      color: var(--blanc);
+    }
+
+    /* Formulaire avis */
+    .review-form-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--blanc);
+      border: 1px solid var(--bordure-produit);
+      padding: 40px;
+    }
+
+    .review-form-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .star-rating-input {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      flex-direction: row-reverse;
+    }
+
+    .star-rating-input input {
+      display: none;
+    }
+
+    .star-rating-input label {
+      font-size: 1.8rem;
+      color: var(--bordure-produit);
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .star-rating-input label:hover,
+    .star-rating-input label:hover ~ label,
+    .star-rating-input input:checked ~ label {
+      color: var(--rose-poudre);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gris);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--bordure-produit);
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--noir);
+      font-weight: 300;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--rose-poudre);
+    }
+
+    .form-group textarea { min-height: 100px; }
+
+    .btn-submit-review {
+      width: 100%;
+      padding: 14px;
+      background: var(--noir);
+      color: var(--blanc);
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-submit-review:hover { background: var(--rose-poudre); }
+
+    .form-message {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: var(--gris);
+      min-height: 20px;
+    }
+
+    .form-message.success { color: #5a8a5a; }
+    .form-message.error { color: #c05050; }
+
+    /* Reviews vides */
+    .reviews-empty {
+      text-align: center;
+      grid-column: 1 / -1;
+      padding: 40px;
+      color: var(--gris);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+    }
+
+    /* ========== MODAL TOUS LES AVIS ========== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(26, 26, 26, 0.5);
+      z-index: 500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(2px);
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: var(--blanc);
+      max-width: 800px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      padding: 40px;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--gris);
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover { color: var(--noir); }
+
+    .modal-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      margin-bottom: 30px;
+    }
+
+    .modal-reviews-list { display: flex; flex-direction: column; gap: 20px; }
+
+    .modal-review-item {
+      border-bottom: 1px solid var(--bordure-produit);
+      padding-bottom: 20px;
+    }
+
+    .modal-review-item:last-child { border-bottom: none; }
+
+    /* ========== PANIER SIDEBAR ========== */
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(26, 26, 26, 0.4);
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .cart-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .cart-sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 400px;
+      max-width: 95vw;
+      height: 100vh;
+      background: var(--blanc);
+      z-index: 300;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-sidebar.open {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 28px 20px;
+      border-bottom: 1px solid var(--bordure-produit);
+    }
+
+    .cart-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+    }
+
+    .cart-close {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--gris);
+      transition: color 0.2s;
+      padding: 4px;
+    }
+
+    .cart-close:hover { color: var(--noir); }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 28px;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--gris);
+    }
+
+    .cart-empty p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .cart-empty small { font-size: 0.8rem; }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 70px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--bordure-produit);
+    }
+
+    .cart-item:last-child { border-bottom: none; }
+
+    .cart-item-img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      background: var(--rose-clair);
+    }
+
+    .cart-item-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .cart-item-price {
+      font-size: 0.85rem;
+      color: var(--gris);
+      margin-bottom: 8px;
+    }
+
+    .cart-qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-qty-btn {
+      width: 26px;
+      height: 26px;
+      background: transparent;
+      border: 1px solid var(--bordure-produit);
+      color: var(--noir);
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+      line-height: 1;
+    }
+
+    .cart-qty-btn:hover {
+      background: var(--rose-clair);
+      border-color: var(--rose-poudre);
+    }
+
+    .cart-qty-value {
+      font-size: 0.9rem;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .cart-item-remove {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      color: var(--gris);
+      cursor: pointer;
+      transition: color 0.2s;
+      padding: 4px;
+      align-self: flex-start;
+    }
+
+    .cart-item-remove:hover { color: var(--noir); }
+
+    .cart-footer {
+      padding: 20px 28px 28px;
+      border-top: 1px solid var(--bordure-produit);
+    }
+
+    .cart-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .cart-total-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .cart-total-amount {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+    }
+
+    .cart-shipping-note {
+      font-size: 0.75rem;
+      color: var(--gris);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .btn-checkout {
+      width: 100%;
+      padding: 16px;
+      background: var(--noir);
+      color: var(--blanc);
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-checkout:hover { background: var(--rose-poudre); }
+
+    /* ========== BOUTON CTA ========== */
+    .btn-cta {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--noir);
+      color: var(--blanc) !important;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 30px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-cta:hover { background: var(--rose-poudre); }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--noir);
+      color: var(--blanc);
+      padding: 60px 40px 30px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 50px;
+    }
+
+    .footer .logo-heavens { color: var(--blanc); }
+    .footer .logo-by { color: var(--blanc); opacity: 0.9; }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: var(--gris);
+      max-width: 300px;
+      margin-top: 20px;
+    }
+
+    .footer-links h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: var(--blanc);
+    }
+
+    .footer-links ul { list-style: none; }
+
+    .footer-links li { margin-bottom: 10px; }
+
+    .footer-links a {
+      color: var(--gris);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover { color: var(--rose-poudre); }
+
+    .newsletter input {
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: transparent;
+      color: var(--blanc);
+      width: 100%;
+      max-width: 250px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .newsletter input::placeholder { color: var(--gris); }
+
+    .newsletter button {
+      padding: 12px 24px;
+      background: var(--blanc);
+      border: none;
+      color: var(--noir);
+      font-size: 0.75rem;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .newsletter button:hover {
+      background: var(--rose-poudre);
+      color: var(--blanc);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 30px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--gris);
+    }
+
+    .footer-instagram {
+      margin-top: 20px;
+    }
+
+    .footer-instagram a {
+      color: var(--rose-poudre);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    /* ========== TOAST NOTIFICATION ========== */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--noir);
+      color: var(--blanc);
+      padding: 12px 24px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      z-index: 999;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1100px) {
+      /* Revenir à une grille simple 4 colonnes sur tablette large */
+      .categories-grid.items-7 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .categories-grid.items-7 > * { grid-column: auto !important; }
+    }
+
+    @media (max-width: 968px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-text { order: 1; padding: 60px 30px; }
+      .hero-image { order: 2; min-height: 400px; }
+      .categories-grid,
+      .categories-grid.items-7 { grid-template-columns: repeat(2, 1fr) !important; }
+      .categories-grid.items-7 > * { grid-column: auto !important; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+      .storytelling-inner { grid-template-columns: 1fr; }
+      .storytelling-image { order: 1; }
+      .engagements-grid { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-content { grid-template-columns: 1fr; text-align: center; }
+      .footer-brand p { max-width: none; }
+    }
+
+    @media (max-width: 768px) {
+      .header { flex-direction: column; padding: 20px; }
+      .nav-main ul { justify-content: center; }
+      .cart-sidebar { width: 100%; max-width: 100%; }
+      .reviews-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .categories-grid,
+      .categories-grid.items-7 { grid-template-columns: repeat(2, 1fr) !important; gap: 20px; }
+      .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== BARRE ANNONCE ========== -->
+  <div class="announcement-bar">
+    ✦ Livraison offerte dès 60€ · Bijoux faits main · Gold filled & Argent sterling ✦
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <div class="header-icons">
+      <a href="#" aria-label="Recherche">🔍</a>
+      <a href="#" aria-label="Compte">👤</a>
+    </div>
+
+    <a href="#" class="logo">
+      <span class="logo-heavens">Heaven's</span>
+      <span class="logo-by">By Elena</span>
+    </a>
+
+    <nav class="nav-main">
+      <ul>
+        <li><a href="#" data-cat="Colliers">Colliers</a></li>
+        <li><a href="#" data-cat="Boucles">Boucles</a></li>
+        <li><a href="#" data-cat="Bagues">Bagues</a></li>
+        <li><a href="#" data-cat="Bracelets">Bracelets</a></li>
+        <li><a href="#" data-surmesure="true">Sur-mesure</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-icons">
+      <button class="cart-btn" id="cartToggle" aria-label="Ouvrir le panier">
+        🛒
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Bijoux faits main,<br>portés avec âme</h1>
+      <p class="subtitle">Chaque pièce est unique, créée avec soin par Elena</p>
+      <a href="#boutique" class="btn-cta">Découvrir</a>
+    </div>
+    <div class="hero-image" role="img" aria-label="Heaven's By Elena — bijoux artisanaux"></div>
+  </section>
+
+  <!-- ========== CATÉGORIES ========== -->
+  <section class="categories" id="boutique">
+    <h2 class="section-title">Explorer</h2>
+    <div class="categories-grid items-7" id="categoriesGrid">
+      <div class="category-item" data-cat="Boucles">
+        <div class="category-image">
+          <img src="https://placehold.co/300x400/F5E6E0/8A8A8A?text=Boucles" alt="Boucles d'oreilles" loading="lazy">
+        </div>
+        <span>Boucles</span>
+      </div>
+      <div class="category-item" data-cat="Colliers">
+        <div class="category-image">
+          <img src="https://placehold.co/300x400/F5E6E0/8A8A8A?text=Colliers" alt="Colliers" loading="lazy">
+        </div>
+        <span>Colliers</span>
+      </div>
+      <div class="category-item" data-cat="Parrures">
+        <div class="category-image">
+          <img src="https://placehold.co/300x400/F5E6E0/8A8A8A?text=Parrures" alt="Parrures" loading="lazy">
+        </div>
+        <span>Parrures</span>
+      </div>
+      <div class="category-item" data-cat="Bracelets">
+        <div class="category-image">
+          <img src="https://placehold.co/300x400/F5E6E0/8A8A8A?text=Bracelets" alt="Bracelets" loading="lazy">
+        </div>
+        <span>Bracelets</span>
+      </div>
+      <div class="category-item" data-cat="Bougies">
+        <div class="category-image">
+          <img src="https://placehold.co/300x400/F5E6E0/8A8A8A?text=Bougies" alt="Bougies" loading="lazy">
+        </div>
+        <span>Bougies</span>
+      </div>
+      <div class="category-item" data-cat="Lunettes">
+        <div class="category-image">
+          <img src="https://placehold.co/300x400/F5E6E0/8A8A8A?text=Lunettes" alt="Lunettes" loading="lazy">
+        </div>
+        <span>Lunettes</span>
+      </div>
+      <div class="category-item" data-cat="Sacs">
+        <div class="category-image">
+          <img src="https://placehold.co/300x400/F5E6E0/8A8A8A?text=Sacs" alt="Sacs" loading="lazy">
+        </div>
+        <span>Sacs</span>
+      </div>
+    </div>
+    <button class="filter-reset" id="filterReset">Tous les produits</button>
+  </section>
+
+  <!-- ========== GALERIE PRODUITS ========== -->
+  <section class="best-sellers" id="products-section">
+    <h2 class="section-title" id="productsTitle">Meilleures ventes</h2>
+    <div class="products-grid" id="productsGrid">
+      <!-- Chargement Supabase -->
+    </div>
+  </section>
+
+  <!-- ========== NOTRE HISTOIRE ========== -->
+  <section class="storytelling">
+    <div class="storytelling-inner">
+      <div class="storytelling-image" role="img" aria-label="Elena créatrice de bijoux"></div>
+      <div class="storytelling-text">
+        <h2>Notre histoire</h2>
+        <p>Elena crée ses bijoux à la main, avec passion et minutie. Chaque pièce est façonnée en gold filled et argent sterling, en série limitée, pour vous offrir des créations durables et élégantes.</p>
+        <p>Des matériaux nobles, un savoir-faire artisanal et une attention portée à chaque détail : voilà ce qui fait l'âme de Heaven's By Elena.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ENGAGEMENTS ========== -->
+  <section class="engagements">
+    <h2 class="section-title">Nos engagements</h2>
+    <div class="engagements-grid">
+      <div class="engagement-item">
+        <div class="engagement-icon">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Fait main en France</h3>
+        <p>Créations artisanales</p>
+      </div>
+      <div class="engagement-item">
+        <div class="engagement-icon">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Gold filled & Argent sterling</h3>
+        <p>Métaux nobles</p>
+      </div>
+      <div class="engagement-item">
+        <div class="engagement-icon">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3>Livraison soignée</h3>
+        <p>Emballage luxueux</p>
+      </div>
+      <div class="engagement-item">
+        <div class="engagement-icon">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        </div>
+        <h3>Retours 14 jours</h3>
+        <p>Satisfait ou remboursé</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AVIS CLIENTS ========== -->
+  <section class="reviews-section" id="avis">
+    <h2 class="section-title">Avis clients</h2>
+
+    <div class="reviews-summary" id="reviewsSummary">
+      <div class="reviews-avg" id="reviewsAvg">—</div>
+      <div class="stars-display" id="reviewsStars">☆☆☆☆☆</div>
+      <div class="reviews-count" id="reviewsCount">Aucun avis pour le moment</div>
+    </div>
+
+    <div class="reviews-grid" id="reviewsGrid">
+      <!-- Avis depuis Supabase -->
+    </div>
+
+    <div class="reviews-actions" id="reviewsActions" style="display:none;">
+      <button class="btn-see-all" id="btnSeeAllReviews">Voir tous les avis</button>
+    </div>
+
+    <!-- Formulaire laisser un avis -->
+    <div class="review-form-wrapper">
+      <h3 class="review-form-title">Laisser un avis</h3>
+      <form id="reviewForm" novalidate>
+        <div class="star-rating-input" role="radiogroup" aria-label="Note">
+          <input type="radio" id="s5" name="rating" value="5"><label for="s5" title="5 étoiles">★</label>
+          <input type="radio" id="s4" name="rating" value="4"><label for="s4" title="4 étoiles">★</label>
+          <input type="radio" id="s3" name="rating" value="3"><label for="s3" title="3 étoiles">★</label>
+          <input type="radio" id="s2" name="rating" value="2"><label for="s2" title="2 étoiles">★</label>
+          <input type="radio" id="s1" name="rating" value="1"><label for="s1" title="1 étoile">★</label>
+        </div>
+        <div class="form-group">
+          <label for="reviewComment">Votre avis *</label>
+          <textarea id="reviewComment" name="comment" placeholder="Partagez votre expérience..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="reviewName">Votre prénom (optionnel)</label>
+          <input type="text" id="reviewName" name="name" placeholder="Ex: Sophie" maxlength="50">
+        </div>
+        <button type="submit" class="btn-submit-review">Publier mon avis</button>
+        <p class="form-message" id="formMessage"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-heavens">Heaven's</span>
+          <span class="logo-by">By Elena</span>
+        </div>
+        <p>Bijoux faits main avec âme. Gold filled & Argent sterling.</p>
+        <div class="newsletter">
+          <input type="email" id="newsletterEmail" placeholder="Votre email" aria-label="Email newsletter">
+          <button type="button" id="newsletterBtn">S'abonner</button>
+        </div>
+        <div class="footer-instagram">
+          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram ↗</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Boutique</h4>
+        <ul>
+          <li><a href="#" data-cat="Colliers">Colliers</a></li>
+          <li><a href="#" data-cat="Boucles">Boucles</a></li>
+          <li><a href="#" data-cat="Bagues">Bagues</a></li>
+          <li><a href="#" data-cat="Bracelets">Bracelets</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="#">Livraison</a></li>
+          <li><a href="#">Retours</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#avis">Avis clients</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 Heaven's By Elena. Tous droits réservés.
+    </div>
+  </footer>
+
+  <!-- ========== PANIER SIDEBAR ========== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar" aria-label="Panier">
+    <div class="cart-header">
+      <h2 class="cart-title">Mon Panier</h2>
+      <button class="cart-close" id="cartClose" aria-label="Fermer le panier">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total-row">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-amount" id="cartTotal">0,00 €</span>
+      </div>
+      <p class="cart-shipping-note">Livraison offerte dès 60€ d'achat</p>
+      <button class="btn-checkout" id="btnCheckout">Passer la commande</button>
+    </div>
+  </aside>
+
+  <!-- ========== MODAL TOUS LES AVIS ========== -->
+  <div class="modal-overlay" id="modalAllReviews" role="dialog" aria-modal="true" aria-label="Tous les avis">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose" aria-label="Fermer">✕</button>
+      <h2 class="modal-title">Tous les avis</h2>
+      <div class="modal-reviews-list" id="modalReviewsList"></div>
+    </div>
+  </div>
+
+  <!-- ========== TOAST ========== -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ========== SUPABASE CLIENT ========== -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+    /* ================================================
+       CONFIGURATION SUPABASE
+       Remplacez par vos vraies clés Supabase
+    ================================================ */
+    const SUPABASE_URL = 'https://emvbgrjsxizfvebbijga.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVtdmJncmpzeGl6ZnZlYmJpamdhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI3MDIzMjEsImV4cCI6MjA4ODI3ODMyMX0.h8mmECW6YXHKrz9oz3lYaxJbG5kzf6B4peEC-VknFgs';
+
+    /* ================================================
+       INITIALISATION
+    ================================================ */
+    let supabase = null;
+
+    try {
+      if (SUPABASE_URL.includes('VOTRE_PROJECT_ID')) {
+        console.warn('[Heaven\'s] Supabase non configuré — mode démo activé.');
+      } else {
+        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      }
+    } catch (e) {
+      console.error('[Heaven\'s] Erreur Supabase init:', e);
+    }
+
+    /* ================================================
+       DONNÉES DE DÉMONSTRATION (si Supabase non config.)
+    ================================================ */
+    const DEMO_PRODUCTS = [
+      { id: 1, name: 'Collier Lumière', price: 65.00, badge: 'Fait main', category: 'Colliers', image_url: 'https://placehold.co/400x400/F5E6E0/8A8A8A?text=Collier' },
+      { id: 2, name: 'Boucles Perle', price: 45.00, badge: 'Pièce unique', category: 'Boucles', image_url: 'https://placehold.co/400x400/F5E6E0/8A8A8A?text=Boucles' },
+      { id: 3, name: 'Bague Éternité', price: 75.00, badge: 'Fait main', category: 'Bagues', image_url: 'https://placehold.co/400x400/F5E6E0/8A8A8A?text=Bague' },
+      { id: 4, name: 'Bracelet Douceur', price: 38.00, badge: 'Fait main', category: 'Bracelets', image_url: 'https://placehold.co/400x400/F5E6E0/8A8A8A?text=Bracelet' },
+      { id: 5, name: 'Collier Rosé', price: 58.00, badge: 'Nouveau', category: 'Colliers', image_url: 'https://placehold.co/400x400/F5E6E0/8A8A8A?text=Collier+2' },
+      { id: 6, name: 'Parrure Lune', price: 120.00, badge: 'Édition limitée', category: 'Parrures', image_url: 'https://placehold.co/400x400/F5E6E0/8A8A8A?text=Parrure' },
+      { id: 7, name: 'Bougie Ambre', price: 28.00, badge: 'Fait main', category: 'Bougies', image_url: 'https://placehold.co/400x400/F5E6E0/8A8A8A?text=Bougie' },
+      { id: 8, name: 'Lunettes Nacre', price: 85.00, badge: 'Nouveau', category: 'Lunettes', image_url: 'https://placehold.co/400x400/F5E6E0/8A8A8A?text=Lunettes' },
+    ];
+
+    const DEMO_REVIEWS = [
+      { id: 1, rating: 5, comment: 'Absolument magnifique ! La qualité est incroyable et les bijoux sont encore plus beaux en vrai.', author_name: 'Sophie L.', created_at: '2025-02-10' },
+      { id: 2, rating: 5, comment: 'J\'ai offert le collier Lumière à ma fille pour son anniversaire, elle était ravie ! Livraison rapide et emballage soigné.', author_name: 'Marie', created_at: '2025-01-28' },
+      { id: 3, rating: 4, comment: 'Très belle qualité artisanale. Je commande régulièrement et je ne suis jamais déçue.', author_name: 'Camille', created_at: '2025-01-15' },
+    ];
+
+    /* ================================================
+       ÉTAT DE L'APPLICATION
+    ================================================ */
+    let allProducts = [];
+    let allReviews = [];
+    let activeCategory = null;
+    let cart = [];
+
+    /* ================================================
+       UTILITAIRES
+    ================================================ */
+    function formatPrice(price) {
+      return Number(price).toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+    }
+
+    function sanitize(str) {
+      if (typeof str !== 'string') return '';
+      return str.replace(/[<>'"&]/g, c => ({ '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;', '&': '&amp;' }[c]));
+    }
+
+    function starsHTML(rating) {
+      const r = Math.round(Math.max(0, Math.min(5, rating)));
+      return '★'.repeat(r) + '☆'.repeat(5 - r);
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2800);
+    }
+
+    function formatDate(dateStr) {
+      try {
+        return new Date(dateStr).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+      } catch { return ''; }
+    }
+
+    /* ================================================
+       CHARGEMENT DES PRODUITS
+    ================================================ */
+    async function loadProducts() {
+      const grid = document.getElementById('productsGrid');
+
+      // Afficher skeletons
+      grid.innerHTML = Array(4).fill(0).map(() => `
+        <article class="product-card loading">
+          <div class="product-image skeleton"></div>
+          <div class="product-info">
+            <div class="product-name skeleton" style="height:20px;margin:0 auto 8px;width:70%;"></div>
+            <div class="product-price skeleton" style="height:16px;margin:0 auto;width:40%;"></div>
+          </div>
+        </article>
+      `).join('');
+
+      try {
+        if (supabase) {
+          const { data, error } = await supabase
+            .from('products')
+            .select('id, name, price, badge, category, image_url')
+            .order('created_at', { ascending: false });
+
+          if (error) throw error;
+          allProducts = Array.isArray(data) ? data : [];
+        } else {
+          await new Promise(r => setTimeout(r, 500));
+          allProducts = DEMO_PRODUCTS;
+        }
+      } catch (err) {
+        console.error('[Heaven\'s] Erreur chargement produits:', err);
+        allProducts = DEMO_PRODUCTS;
+      }
+
+      renderProducts(allProducts);
+    }
+
+    function renderProducts(products) {
+      const grid = document.getElementById('productsGrid');
+      const title = document.getElementById('productsTitle');
+
+      if (!Array.isArray(products) || products.length === 0) {
+        title.textContent = activeCategory ? `Catégorie : ${activeCategory}` : 'Meilleures ventes';
+        grid.innerHTML = `<div class="products-empty">Aucun produit disponible pour le moment.</div>`;
+        return;
+      }
+
+      title.textContent = activeCategory ? `Catégorie : ${activeCategory}` : 'Meilleures ventes';
+
+      grid.innerHTML = products.map(p => `
+        <article class="product-card" data-id="${sanitize(String(p.id))}">
+          ${p.badge ? `<span class="product-badge">${sanitize(p.badge)}</span>` : ''}
+          <div class="product-image">
+            <img
+              src="${sanitize(p.image_url || 'https://placehold.co/400x400/F5E6E0/8A8A8A?text=Bijou')}"
+              alt="${sanitize(p.name || 'Bijou')}"
+              loading="lazy"
+              onerror="this.src='https://placehold.co/400x400/F5E6E0/8A8A8A?text=Bijou'"
+            >
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">${sanitize(p.name || '')}</h3>
+            <p class="product-price">${formatPrice(p.price || 0)}</p>
+            <button class="btn-add-cart" data-id="${sanitize(String(p.id))}">Ajouter au panier</button>
+          </div>
+        </article>
+      `).join('');
+
+      // Écouter les clics "Ajouter au panier"
+      grid.querySelectorAll('.btn-add-cart').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-id');
+          const product = allProducts.find(p => String(p.id) === id);
+          if (product) addToCart(product);
+        });
+      });
+    }
+
+    /* ================================================
+       FILTRES CATÉGORIES
+    ================================================ */
+    function initCategories() {
+      const items = document.querySelectorAll('.category-item[data-cat]');
+      items.forEach(item => {
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          const cat = item.getAttribute('data-cat');
+          setActiveCategory(cat);
+        });
+      });
+
+      document.getElementById('filterReset').addEventListener('click', () => {
+        setActiveCategory(null);
+      });
+
+      // Nav links avec data-cat
+      document.querySelectorAll('a[data-cat]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const cat = link.getAttribute('data-cat');
+          setActiveCategory(cat || null);
+          document.getElementById('products-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      // Lien "Sur-mesure" → comportement distinct (affiche toast ou redirige)
+      const surmesureLink = document.querySelector('a[data-surmesure]');
+      if (surmesureLink) {
+        surmesureLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          showToast('Sur-mesure : contactez-nous par email ou Instagram ✦');
+        });
+      }
+    }
+
+    function setActiveCategory(cat) {
+      activeCategory = cat;
+
+      // Mise à jour visuelle catégories
+      document.querySelectorAll('.category-item[data-cat]').forEach(item => {
+        item.classList.toggle('active', item.getAttribute('data-cat') === cat);
+      });
+
+      // Mise à jour nav active
+      document.querySelectorAll('.nav-main a[data-cat]').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('data-cat') === cat && cat);
+      });
+
+      const filtered = cat
+        ? allProducts.filter(p => p.category === cat)
+        : allProducts;
+
+      renderProducts(filtered);
+
+      // Scroll vers produits
+      document.getElementById('products-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    /* ================================================
+       PANIER — LOGIQUE
+    ================================================ */
+    const CART_KEY = 'heavens_cart';
+
+    function loadCart() {
+      try {
+        const raw = localStorage.getItem(CART_KEY);
+        cart = raw ? JSON.parse(raw) : [];
+      } catch { cart = []; }
+      updateCartUI();
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+      } catch (e) {
+        console.warn('[Heaven\'s] localStorage indisponible:', e);
+      }
+    }
+
+    function addToCart(product) {
+      const existing = cart.find(i => String(i.id) === String(product.id));
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image_url: product.image_url,
+          qty: 1
+        });
+      }
+      saveCart();
+      updateCartUI();
+      showToast(`${product.name} ajouté au panier`);
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(i => String(i.id) !== String(id));
+      saveCart();
+      updateCartUI();
+    }
+
+    function updateQty(id, delta) {
+      const item = cart.find(i => String(i.id) === String(id));
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        removeFromCart(id);
+        return;
+      }
+      saveCart();
+      updateCartUI();
+    }
+
+    function getCartTotal() {
+      return cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+    }
+
+    function getCartCount() {
+      return cart.reduce((sum, i) => sum + i.qty, 0);
+    }
+
+    function updateCartUI() {
+      const count = getCartCount();
+      const badge = document.getElementById('cartBadge');
+      badge.textContent = count;
+      badge.classList.toggle('visible', count > 0);
+
+      const cartItems = document.getElementById('cartItems');
+      const cartFooter = document.getElementById('cartFooter');
+      const cartTotal = document.getElementById('cartTotal');
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = `
+          <div class="cart-empty">
+            <p>Votre panier est vide</p>
+            <small>Explorez nos créations</small>
+          </div>`;
+        cartFooter.style.display = 'none';
+        return;
+      }
+
+      cartItems.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <img
+            class="cart-item-img"
+            src="${sanitize(item.image_url || 'https://placehold.co/70x70/F5E6E0/8A8A8A?text=Bijou')}"
+            alt="${sanitize(item.name)}"
+            onerror="this.src='https://placehold.co/70x70/F5E6E0/8A8A8A?text=Bijou'"
+          >
+          <div>
+            <div class="cart-item-name">${sanitize(item.name)}</div>
+            <div class="cart-item-price">${formatPrice(item.price)}</div>
+            <div class="cart-qty-controls">
+              <button class="cart-qty-btn" data-id="${sanitize(String(item.id))}" data-delta="-1" aria-label="Réduire quantité">−</button>
+              <span class="cart-qty-value">${item.qty}</span>
+              <button class="cart-qty-btn" data-id="${sanitize(String(item.id))}" data-delta="1" aria-label="Augmenter quantité">+</button>
+            </div>
+          </div>
+          <button class="cart-item-remove" data-id="${sanitize(String(item.id))}" aria-label="Supprimer ${sanitize(item.name)}">✕</button>
+        </div>
+      `).join('');
+
+      cartItems.querySelectorAll('.cart-qty-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          updateQty(btn.getAttribute('data-id'), parseInt(btn.getAttribute('data-delta')));
+        });
+      });
+
+      cartItems.querySelectorAll('.cart-item-remove').forEach(btn => {
+        btn.addEventListener('click', () => {
+          removeFromCart(btn.getAttribute('data-id'));
+        });
+      });
+
+      cartTotal.textContent = formatPrice(getCartTotal());
+      cartFooter.style.display = 'block';
+    }
+
+    /* ================================================
+       PANIER — OUVERTURE / FERMETURE
+    ================================================ */
+    function openCart() {
+      document.getElementById('cartSidebar').classList.add('open');
+      document.getElementById('cartOverlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+      document.getElementById('cartSidebar').classList.remove('open');
+      document.getElementById('cartOverlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* ================================================
+       AVIS CLIENTS
+    ================================================ */
+    async function loadReviews() {
+      try {
+        if (supabase) {
+          const { data, error } = await supabase
+            .from('reviews')
+            .select('id, rating, comment, author_name, created_at')
+            .eq('status', 'approved')
+            .order('created_at', { ascending: false });
+
+          if (error) throw error;
+          allReviews = Array.isArray(data) ? data : [];
+        } else {
+          allReviews = DEMO_REVIEWS;
+        }
+      } catch (err) {
+        console.error('[Heaven\'s] Erreur chargement avis:', err);
+        allReviews = DEMO_REVIEWS;
+      }
+
+      renderReviews();
+      updateSchema();
+    }
+
+    function renderReviews() {
+      const grid = document.getElementById('reviewsGrid');
+      const summary = document.getElementById('reviewsSummary');
+      const actionsEl = document.getElementById('reviewsActions');
+
+      if (!allReviews || allReviews.length === 0) {
+        document.getElementById('reviewsAvg').textContent = '—';
+        document.getElementById('reviewsStars').textContent = '☆☆☆☆☆';
+        document.getElementById('reviewsCount').textContent = 'Aucun avis pour le moment';
+        grid.innerHTML = `<div class="reviews-empty">Soyez le premier à partager votre expérience !</div>`;
+        actionsEl.style.display = 'none';
+        return;
+      }
+
+      // Moyenne
+      const avg = allReviews.reduce((sum, r) => sum + (r.rating || 0), 0) / allReviews.length;
+      document.getElementById('reviewsAvg').textContent = avg.toFixed(1);
+      document.getElementById('reviewsStars').textContent = starsHTML(avg);
+      document.getElementById('reviewsCount').textContent = `${allReviews.length} avis vérifi${allReviews.length > 1 ? 'és' : 'é'}`;
+
+      // Afficher les 3 premiers
+      const toShow = allReviews.slice(0, 3);
+      grid.innerHTML = toShow.map(r => reviewCardHTML(r)).join('');
+
+      actionsEl.style.display = allReviews.length > 3 ? 'block' : 'none';
+    }
+
+    function reviewCardHTML(r) {
+      return `
+        <div class="review-card" itemscope itemtype="https://schema.org/Review">
+          <meta itemprop="reviewRating" content="${r.rating}">
+          <div class="review-stars">${starsHTML(r.rating)}</div>
+          <p class="review-comment" itemprop="reviewBody">"${sanitize(r.comment || '')}"</p>
+          <div class="review-author" itemprop="author">${sanitize(r.author_name || 'Client anonyme')}</div>
+          <div class="review-date">${formatDate(r.created_at)}</div>
+        </div>
+      `;
+    }
+
+    /* ================================================
+       SCHEMA.ORG — SEO
+    ================================================ */
+    function updateSchema() {
+      if (!allReviews || allReviews.length === 0) return;
+
+      const avg = allReviews.reduce((sum, r) => sum + (r.rating || 0), 0) / allReviews.length;
+
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "Heaven's By Elena",
+        "description": "Bijoux faits main, portés avec âme. Gold filled & Argent sterling.",
+        "url": window.location.href,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": avg.toFixed(1),
+          "reviewCount": allReviews.length,
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": allReviews.slice(0, 5).map(r => ({
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": r.rating
+          },
+          "author": {
+            "@type": "Person",
+            "name": r.author_name || "Client anonyme"
+          },
+          "reviewBody": r.comment || "",
+          "datePublished": r.created_at ? r.created_at.split('T')[0] : ""
+        }))
+      };
+
+      document.getElementById('schema-aggregate').textContent = JSON.stringify(schema);
+    }
+
+    /* ================================================
+       FORMULAIRE AVIS
+    ================================================ */
+    function initReviewForm() {
+      const form = document.getElementById('reviewForm');
+      const msgEl = document.getElementById('formMessage');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        msgEl.className = 'form-message';
+        msgEl.textContent = '';
+
+        const ratingInput = form.querySelector('input[name="rating"]:checked');
+        const comment = form.querySelector('#reviewComment').value.trim();
+        const name = form.querySelector('#reviewName').value.trim();
+
+        if (!ratingInput) {
+          msgEl.className = 'form-message error';
+          msgEl.textContent = 'Veuillez sélectionner une note.';
+          return;
+        }
+
+        if (!comment || comment.length < 5) {
+          msgEl.className = 'form-message error';
+          msgEl.textContent = 'Veuillez écrire un avis d\'au moins 5 caractères.';
+          return;
+        }
+
+        const review = {
+          rating: parseInt(ratingInput.value),
+          comment: comment.substring(0, 1000),
+          author_name: name.substring(0, 50) || null,
+          created_at: new Date().toISOString()
+        };
+
+        const btn = form.querySelector('.btn-submit-review');
+        btn.disabled = true;
+        btn.textContent = 'Publication...';
+
+        try {
+          if (supabase) {
+            const { error } = await supabase.from('reviews').insert([review]);
+            if (error) throw error;
+          } else {
+            await new Promise(r => setTimeout(r, 600));
+            allReviews.unshift({ ...review, id: Date.now() });
+          }
+
+          msgEl.className = 'form-message success';
+          msgEl.textContent = 'Merci pour votre avis ! Il sera visible après modération.';
+          form.reset();
+
+          if (!supabase) {
+            renderReviews();
+            updateSchema();
+          }
+        } catch (err) {
+          console.error('[Heaven\'s] Erreur envoi avis:', err);
+          msgEl.className = 'form-message error';
+          msgEl.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Publier mon avis';
+        }
+      });
+    }
+
+    /* ================================================
+       MODAL TOUS LES AVIS
+    ================================================ */
+    function initModal() {
+      const btnSeeAll = document.getElementById('btnSeeAllReviews');
+      const modal = document.getElementById('modalAllReviews');
+      const modalClose = document.getElementById('modalClose');
+      const list = document.getElementById('modalReviewsList');
+
+      btnSeeAll.addEventListener('click', () => {
+        list.innerHTML = allReviews.map(r => `
+          <div class="modal-review-item">
+            <div class="review-stars" style="font-size:0.9rem;color:var(--rose-poudre);">${starsHTML(r.rating)}</div>
+            <p style="font-size:0.9rem;color:var(--noir);line-height:1.7;margin:10px 0;font-style:italic;">"${sanitize(r.comment || '')}"</p>
+            <div style="font-size:0.75rem;color:var(--gris);letter-spacing:0.1em;">${sanitize(r.author_name || 'Anonyme')} · ${formatDate(r.created_at)}</div>
+          </div>
+        `).join('');
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+
+      modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+      function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    /* ================================================
+       NEWSLETTER (demo)
+    ================================================ */
+    function initNewsletter() {
+      document.getElementById('newsletterBtn').addEventListener('click', () => {
+        const email = document.getElementById('newsletterEmail').value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          showToast('Veuillez entrer un email valide.');
+          return;
+        }
+        showToast('Merci pour votre inscription !');
+        document.getElementById('newsletterEmail').value = '';
+      });
+    }
+
+    /* ================================================
+       COMMANDE (demo)
+    ================================================ */
+    function initCheckout() {
+      document.getElementById('btnCheckout').addEventListener('click', () => {
+        if (cart.length === 0) return;
+        showToast('Redirection vers le paiement...');
+        // Ici : rediriger vers Stripe, PayPal, etc.
+      });
+    }
+
+    /* ================================================
+       INITIALISATION GLOBALE
+    ================================================ */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Panier
+      loadCart();
+      document.getElementById('cartToggle').addEventListener('click', openCart);
+      document.getElementById('cartClose').addEventListener('click', closeCart);
+      document.getElementById('cartOverlay').addEventListener('click', closeCart);
+
+      // Fermer avec Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeCart();
+          document.getElementById('modalAllReviews').classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Catégories
+      initCategories();
+
+      // Produits
+      loadProducts();
+
+      // Avis
+      loadReviews();
+      initReviewForm();
+      initModal();
+
+      // Newsletter
+      initNewsletter();
+
+      // Checkout
+      initCheckout();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── VARIABLES ────────────────────────────────────────── */
+:root {
+  --rose-poudre:  #E8C4B8;
+  --rose-clair:   #F5E6E0;
+  --bordure:      #F0E0D8;
+  --fond-casse:   #FAFAFA;
+  --noir:         #1A1A1A;
+  --gris:         #8A8A8A;
+  --blanc:        #FFFFFF;
+}
+
+/* ── BASE ─────────────────────────────────────────────── */
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: var(--noir);
+    background: var(--blanc);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+  a { transition: color 0.3s ease; }
+  button { font-family: 'Inter', sans-serif; }
+}
+
+/* ── COMPOSANTS ───────────────────────────────────────── */
+@layer components {
+
+  /* Titre de section centré + ligne rose */
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--noir);
+  }
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: var(--rose-poudre);
+    margin: 12px auto 0;
+  }
+
+  /* Bouton principal noir → hover rose */
+  .btn-primary {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--noir);
+    color: var(--blanc);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+  }
+  .btn-primary:hover { background: var(--rose-poudre); color: var(--blanc); }
+
+  /* Bouton secondaire contour */
+  .btn-secondary {
+    display: inline-block;
+    padding: 12px 28px;
+    background: transparent;
+    border: 1px solid var(--noir);
+    color: var(--noir);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .btn-secondary:hover { background: var(--noir); color: var(--blanc); }
+
+  /* Carte produit */
+  .product-card {
+    background: var(--blanc);
+    border: 1px solid var(--bordure);
+    position: relative;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .product-card:hover {
+    box-shadow: 0 4px 20px rgba(232, 196, 184, 0.25);
+    transform: translateY(-2px);
+  }
+
+  /* Badge produit */
+  .product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--blanc);
+    color: var(--noir);
+    border: 1px solid var(--rose-poudre);
+    padding: 5px 12px;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+
+  /* Input générique */
+  .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--bordure);
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--noir);
+    transition: border-color 0.3s ease;
+    outline: none;
+  }
+  .form-input:focus { border-color: var(--rose-poudre); }
+  .form-input::placeholder { color: var(--gris); }
+
+  /* Label générique */
+  .form-label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gris);
+    margin-bottom: 8px;
+  }
+
+  /* Skeleton loader */
+  .skeleton {
+    background: linear-gradient(90deg, var(--rose-clair) 25%, #edddd6 50%, var(--rose-clair) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 2px;
+  }
+}
+
+/* ── UTILITAIRES ──────────────────────────────────────── */
+@layer utilities {
+  .font-great-vibes { font-family: 'Great Vibes', cursive; }
+  .font-cormorant   { font-family: 'Cormorant Garamond', serif; }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
+
+/* ── ANIMATIONS ───────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
