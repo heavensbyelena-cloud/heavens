@@ -5,6 +5,7 @@ node_modules/
 
 # Build Next.js
 .next/
+.open-next/
 out/
 build/
 

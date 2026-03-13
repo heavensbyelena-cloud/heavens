@@ -208,28 +208,28 @@ export default function ComingSoonPage() {
             </a>
           </div>
 
-          {/* Lien Admin discret */}
+          {/* Lien Admin — visible en bas de page */}
           <div style={{ marginTop: '80px' }}>
             <button
               type="button"
               onClick={() => setShowAdminModal(true)}
               style={{
-                background: 'none',
-                border: 'none',
-                color: 'var(--gris)',
-                fontSize: '0.65rem',
+                background: 'rgba(0,0,0,0.08)',
+                border: '1px solid rgba(0,0,0,0.2)',
+                color: '#333',
+                fontSize: '0.75rem',
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
                 cursor: 'pointer',
-                opacity: 0.6,
-                padding: '8px 12px',
-                transition: 'opacity 0.2s ease',
+                padding: '10px 16px',
+                borderRadius: 4,
+                transition: 'background 0.2s ease, opacity 0.2s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.opacity = '1';
+                e.currentTarget.style.background = 'rgba(0,0,0,0.12)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.opacity = '0.6';
+                e.currentTarget.style.background = 'rgba(0,0,0,0.08)';
               }}
             >
               Admin
