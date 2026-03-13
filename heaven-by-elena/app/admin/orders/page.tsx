@@ -31,7 +31,8 @@ export default async function AdminOrdersPage() {
   const supabase = createServerSupabaseClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect('/account/login');
-  const { data: profile } = await supabase.from('profiles').select('is_admin').eq('id', user.id).single();
+  const { data: profileData } = await supabase.from('profiles').select('is_admin').eq('id', user.id).single();
+  const profile = profileData as { is_admin?: boolean } | null;
   if (!profile?.is_admin) redirect('/');
 
   const { data: orders } = await supabase

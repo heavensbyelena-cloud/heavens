@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -96,7 +96,7 @@ function AdminRefreshButton() {
   );
 }
 
-export default function ShopPage() {
+function ShopPageContent() {
   const searchParams = useSearchParams();
   const adminRequired = searchParams.get('admin_required') === '1';
 
@@ -285,5 +285,13 @@ export default function ShopPage() {
         />
       </div>
     </div>
+  );
+}
+
+export default function ShopPage() {
+  return (
+    <Suspense fallback={<div style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Chargement…</div>}>
+      <ShopPageContent />
+    </Suspense>
   );
 }

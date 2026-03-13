@@ -4,6 +4,17 @@ import { redirect } from 'next/navigation';
 import { createAdminClient } from '@/lib/supabase-server';
 import AdminTabs from '@/components/Admin/AdminTabs';
 
+interface OrderRow {
+  id: string;
+  subtotal?: number | null;
+  shipping_cost?: number | null;
+  total_price?: number | null;
+  total?: number | null;
+  status: string;
+  created_at: string;
+  customer_name?: string | null;
+}
+
 /**
  * Page /admin : un seul écran avec onglets (Dashboard, Produits, Commandes, Avis).
  * Les onglets changent l’état local (useState), pas de navigation vers /admin/products etc.
@@ -44,7 +55,7 @@ export default async function AdminDashboardPage() {
     nbProducts: nbProducts ?? 0,
     nbOrders: nbOrders ?? 0,
     nbPending: nbPending ?? 0,
-    recentOrders: (recentOrders ?? []).map((o) => ({
+    recentOrders: (recentOrders ?? []).map((o: OrderRow) => ({
       id: o.id,
       subtotal: o.subtotal ?? 0,
       shipping_cost: o.shipping_cost ?? 0,

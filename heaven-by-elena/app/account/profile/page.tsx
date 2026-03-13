@@ -1,6 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+
+interface ProfileData {
+  first_name?: string | null;
+  last_name?: string | null;
+  default_address?: Record<string, unknown> | null;
+}
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase-client';
@@ -43,12 +49,13 @@ export default function ProfilePage() {
       }
       setEmail(user.email ?? '');
 
-      const { data: profile } = await supabase
+      const { data: profileData } = await supabase
         .from('profiles')
         .select('first_name, last_name, default_address')
         .eq('id', user.id)
         .single();
 
+      const profile = profileData as ProfileData | null;
       if (profile?.first_name) setFirstName(profile.first_name);
       if (profile?.last_name) setLastName(profile.last_name);
 
@@ -82,22 +89,20 @@ export default function ProfilePage() {
       } = await supabase.auth.getUser();
       if (!user) throw new Error();
 
-      await supabase
-        .from('profiles')
-        .update({
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      await (supabase.from('profiles') as any).update({
+        first_name: firstName,
+        last_name: lastName,
+        default_address: {
           first_name: firstName,
           last_name: lastName,
-          default_address: {
-            first_name: firstName,
-            last_name: lastName,
-            address,
-            city,
-            postal_code: postalCode,
-            country,
-            phone,
-          },
-        })
-        .eq('id', user.id);
+          address,
+          city,
+          postal_code: postalCode,
+          country,
+          phone,
+        },
+      }).eq('id', user.id);
 
       setMsg({ text: 'Profil et adresse mis à jour.', type: 'success' });
     } catch {

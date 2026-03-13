@@ -20,6 +20,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Données invalides' }, { status: 400 });
     }
 
+    // @ts-expect-error - RPC increment_cart_item non défini dans les types Database
     const { error } = await supabase.rpc('increment_cart_item', {
       p_user_id: user.id,
       p_product_id: product_id,
@@ -28,16 +29,14 @@ export async function POST(request: NextRequest) {
 
     if (error) {
       // Fallback si la fonction RPC n'existe pas encore : upsert simple
-      const { error: upsertError } = await supabase
-        .from('cart_items')
-        .upsert(
-          {
-            user_id: user.id,
-            product_id,
-            quantity,
-          },
-          { onConflict: 'user_id,product_id' }
-        );
+      const { error: upsertError } = await (supabase.from('cart_items') as any).upsert(
+        {
+          user_id: user.id,
+          product_id,
+          quantity,
+        },
+        { onConflict: 'user_id,product_id' }
+      );
 
       if (upsertError) throw upsertError;
     }

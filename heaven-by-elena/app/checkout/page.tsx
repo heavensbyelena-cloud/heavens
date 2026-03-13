@@ -38,11 +38,12 @@ export default function CheckoutPage() {
         } = await supabase.auth.getUser();
         if (!user) return;
 
-        const { data: profile } = await supabase
+        const { data: profileData } = await supabase
           .from('profiles')
           .select('first_name, last_name, default_address')
           .eq('id', user.id)
           .single();
+        const profile = profileData as { first_name?: string | null; last_name?: string | null; default_address?: Record<string, unknown> | null } | null;
 
         const addr = (profile?.default_address || {}) as {
           first_name?: string;

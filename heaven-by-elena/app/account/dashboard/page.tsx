@@ -23,6 +23,10 @@ interface UserOrderRow {
   total?: number | null;
 }
 
+interface ProfileWithName {
+  first_name?: string | null;
+}
+
 export default async function DashboardPage() {
   const supabase = createServerSupabaseClient();
   const { data: { user } } = await supabase.auth.getUser();
@@ -39,7 +43,7 @@ export default async function DashboardPage() {
   return (
     <div style={{ maxWidth: '900px', margin: '0 auto', padding: '60px 40px' }}>
       <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2rem', fontWeight: 400, letterSpacing: '0.15em', marginBottom: '8px' }}>
-        Bonjour, {profile?.first_name ?? 'chère cliente'} ✦
+        Bonjour, {(profile as ProfileWithName | null)?.first_name ?? 'chère cliente'} ✦
       </h1>
       <p style={{ color: 'var(--gris)', fontSize: '0.88rem', marginBottom: '40px' }}>{user.email}</p>
 

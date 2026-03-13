@@ -19,11 +19,12 @@ export default async function OrderDetailPage({ params }: PageProps) {
     redirect('/account/login');
   }
 
-  const { data: profile } = await supabase
+  const { data: profileData } = await supabase
     .from('profiles')
     .select('is_admin')
     .eq('id', user.id)
     .single();
+  const profile = profileData as { is_admin?: boolean } | null;
 
   // On récupère directement la commande avec cet ID
   const { data: order } = await admin
