@@ -26,7 +26,7 @@ export default function Footer() {
 
         {/* Marque */}
         <div>
-          <Link href="/" style={{ textDecoration: 'none' }}>
+          <Link href="/home" style={{ textDecoration: 'none' }}>
             <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: '2.2rem', color: 'var(--blanc)', display: 'block', lineHeight: 1.2 }}>
               Heaven&apos;s
             </span>

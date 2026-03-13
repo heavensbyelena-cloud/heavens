@@ -1,16 +1,18 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { createServerSupabaseClient } from '@/lib/supabase-server';
 import { COOKIE_NAME } from '@/lib/jwt';
 
-export async function POST() {
+export async function POST(request: NextRequest) {
   try {
     const supabase = createServerSupabaseClient();
     await supabase.auth.signOut();
 
-    const response = NextResponse.json({ message: 'Déconnecté' });
+    const response = NextResponse.redirect(new URL('/', request.url));
     response.cookies.set(COOKIE_NAME, '', { maxAge: 0, path: '/' });
     return response;
   } catch {
-    return NextResponse.json({ error: 'Erreur serveur' }, { status: 500 });
+    const response = NextResponse.redirect(new URL('/', request.url));
+    response.cookies.set(COOKIE_NAME, '', { maxAge: 0, path: '/' });
+    return response;
   }
 }

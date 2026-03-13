@@ -166,7 +166,7 @@ export default function ShopPage() {
           <span style={{ marginTop: '8px', display: 'inline-block' }}>
             <AdminRefreshButton />
             {' · '}
-            <Link href="/account/login?redirect=/admin" style={{ textDecoration: 'underline', fontWeight: 600 }}>Me reconnecter</Link>
+            <Link href="/" style={{ textDecoration: 'underline', fontWeight: 600 }}>Retour et se reconnecter</Link>
           </span>
         </div>
       )}

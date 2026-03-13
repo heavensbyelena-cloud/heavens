@@ -3,10 +3,7 @@ import { cookies } from 'next/headers';
 import '@/styles/globals.css';
 import { CartProvider } from '@/context/CartContext';
 import { ToastProvider } from '@/context/ToastContext';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import CartSidebar from '@/components/Cart/CartSidebar';
-import Toast from '@/components/Common/Toast';
+import ConditionalLayout from '@/components/Layout/ConditionalLayout';
 import { verifySessionToken, COOKIE_NAME } from '@/lib/jwt';
 
 export const metadata: Metadata = {
@@ -59,11 +56,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <ToastProvider>
         <CartProvider>
-          <Header isAdmin={isAdmin} />
-          <main>{children}</main>
-          <Footer />
-          <CartSidebar />
-          <Toast />
+          <ConditionalLayout isAdmin={isAdmin}>
+            {children}
+          </ConditionalLayout>
         </CartProvider>
         </ToastProvider>
       </body>

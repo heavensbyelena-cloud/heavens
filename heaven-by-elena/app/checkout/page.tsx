@@ -154,7 +154,7 @@ export default function CheckoutPage() {
         <p style={{ color: 'var(--gris)', fontSize: '0.95rem', maxWidth: '400px', lineHeight: 1.7 }}>
           Merci pour votre commande ! Vous allez recevoir un email de confirmation. Elena prépare vos bijoux avec soin.
         </p>
-        <Link href="/" className="btn-primary" style={{ marginTop: '10px' }}>Retour à l&apos;accueil</Link>
+        <Link href="/home" className="btn-primary" style={{ marginTop: '10px' }}>Retour à l&apos;accueil</Link>
       </div>
     );
   }

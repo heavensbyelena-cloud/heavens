@@ -86,7 +86,7 @@ export default async function ProductPage({ params }: Props) {
 
       {/* ── Fil d'Ariane */}
       <nav style={{ padding: '16px 40px', fontSize: '0.75rem', color: 'var(--gris)', letterSpacing: '0.1em' }}>
-        <a href="/" style={{ color: 'var(--gris)', textDecoration: 'none' }}>Accueil</a>
+        <a href="/home" style={{ color: 'var(--gris)', textDecoration: 'none' }}>Accueil</a>
         {' / '}
         <a href="/shop" style={{ color: 'var(--gris)', textDecoration: 'none' }}>Boutique</a>
         {' / '}

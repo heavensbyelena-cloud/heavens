@@ -132,7 +132,7 @@ export default function AdminTabs({ dashboard, products, orders, reviews }: Admi
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2rem', fontWeight: 400, letterSpacing: '0.15em' }}>
           Administration
         </h1>
-        <Link href="/" style={{ fontSize: '0.75rem', color: 'var(--gris)', textDecoration: 'none', letterSpacing: '0.15em' }}>
+        <Link href="/home" style={{ fontSize: '0.75rem', color: 'var(--gris)', textDecoration: 'none', letterSpacing: '0.15em' }}>
           ← Voir la boutique
         </Link>
       </div>

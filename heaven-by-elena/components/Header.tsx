@@ -51,12 +51,33 @@ export default function Header({ isAdmin = false }: HeaderProps) {
         borderBottom: '1px solid var(--bordure)',
       }}>
 
-        {/* Icônes gauche : Admin (visible uniquement pour les comptes admin) + Mon compte */}
+        {/* Icônes gauche : Admin + Déconnexion (admin) + Mon compte */}
         <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
           {isAdmin && (
-            <a href="/admin" aria-label="Administration" style={{ color: 'var(--noir)', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', textDecoration: 'none' }}>
-              Admin
-            </a>
+            <>
+              <a href="/admin" aria-label="Administration" style={{ color: 'var(--noir)', fontSize: '0.7rem', letterSpacing: '0.15em', textTransform: 'uppercase', textDecoration: 'none' }}>
+                Admin
+              </a>
+              <form action="/api/auth/logout" method="POST" style={{ display: 'inline' }}>
+                <button
+                  type="submit"
+                  aria-label="Déconnexion"
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: 'var(--gris)',
+                    fontSize: '0.65rem',
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase',
+                    cursor: 'pointer',
+                    textDecoration: 'underline',
+                    padding: 0,
+                  }}
+                >
+                  Déconnexion
+                </button>
+              </form>
+            </>
           )}
           <Link href="/account/dashboard" aria-label="Mon compte" style={{ color: 'var(--noir)', fontSize: '1rem', textDecoration: 'none' }}>
             👤
@@ -64,7 +85,7 @@ export default function Header({ isAdmin = false }: HeaderProps) {
         </div>
 
         {/* Logo centré */}
-        <Link href="/" style={{ flex: 1, textAlign: 'center', minWidth: '200px', textDecoration: 'none' }}>
+        <Link href="/home" style={{ flex: 1, textAlign: 'center', minWidth: '200px', textDecoration: 'none' }}>
           <span style={{ fontFamily: "'Great Vibes', cursive", fontSize: '2.5rem', color: 'var(--noir)', display: 'block', lineHeight: 1.2 }}>
             Heaven&apos;s
           </span>
